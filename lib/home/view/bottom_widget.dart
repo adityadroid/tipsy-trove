@@ -1,6 +1,5 @@
+import 'package:drink_views/drink_views.dart';
 import 'package:flutter/material.dart';
-import 'package:tipsy_trove/home/view/drinks_list_widget.dart';
-import 'package:tipsy_trove/utils/drink_type.dart';
 
 class BottomWidget extends StatelessWidget {
   const BottomWidget({super.key});

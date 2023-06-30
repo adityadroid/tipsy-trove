@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tipsy_trove/home/view/view.dart';
 import 'package:tipsy_trove/l10n/l10n.dart';
-
 class App extends StatelessWidget {
   const App({super.key});
 
