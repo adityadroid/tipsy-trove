@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:drink_views/l10n/l10n.dart';
+import 'package:tipsy_trove/l10n/l10n.dart';
 
 enum DrinkType {
   alcoholic,

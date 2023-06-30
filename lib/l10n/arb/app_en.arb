@@ -8,11 +8,11 @@
     "@homeSearchBarHint": {
         "description": "Hint text shown in the search bar"
     },
-    "alcoholicLabel":"Alcoholic",
+    "alcoholicLabel":"Booze",
     "@alcoholicLabel": {
         "description": "Title for Alcoholic drinks tab"
     },
-    "nonAlcoholicLabel":"Non-Alcoholic",
+    "nonAlcoholicLabel":"Refreshers",
     "@nonAlcoholicLabel": {
         "description": "Title for Non-Alcoholic drinks tab"
     },
@@ -20,7 +20,7 @@
     "@cocktailsLabel": {
         "description": "Title for Cocktails tab"
     },
-    "ordinaryDrinksLabel":"Ordinary Drinks",
+    "ordinaryDrinksLabel":"Basics",
     "@ordinaryDrinksLabel": {
         "description": "Title for Ordinary Drinks tab"
     }

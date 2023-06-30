@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:drink_views/src/drink_type.dart';
+import 'package:tipsy_trove/drink_category/widgets/drink_type.dart';
 
 class DrinksListWidget extends StatelessWidget {
   const DrinksListWidget({required this.drinkType, super.key});
