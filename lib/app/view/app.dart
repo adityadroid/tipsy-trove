@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tipsy_trove/counter/counter.dart';
+import 'package:tipsy_trove/home/view/view.dart';
 import 'package:tipsy_trove/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -13,10 +13,14 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
           accentColor: const Color(0xFF13B9FF),
         ),
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.black54,
+          unselectedLabelColor: Colors.black38,
+        ),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const HomePage(),
     );
   }
 }
