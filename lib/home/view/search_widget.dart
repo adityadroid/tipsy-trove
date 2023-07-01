@@ -20,7 +20,7 @@ class SearchWidget extends StatelessWidget {
           collapsedHeight: context.height * 0.15,
           pinned: true,
           backgroundColor: Colors.white,
-          bottom: CustomAppBar(),
+          bottom: const BottomBar(),
           flexibleSpace: FlexibleSpaceBar(
             expandedTitleScale: 2,
             titlePadding: const EdgeInsets.fromLTRB(40, 0, 40, 120),
@@ -47,7 +47,9 @@ class SearchWidget extends StatelessWidget {
   }
 }
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class BottomBar extends StatelessWidget implements PreferredSizeWidget {
+  const BottomBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -82,5 +84,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
