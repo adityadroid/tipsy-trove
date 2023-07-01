@@ -60,7 +60,9 @@ class DrinksListView extends StatelessWidget {
                 childCount: drinks.length,
               ),
             ),
-            error: () => const AppErrorWidget(),
+            error: () => const SliverFillRemaining(
+              child: AppErrorWidget(),
+            ),
           );
         });
   }

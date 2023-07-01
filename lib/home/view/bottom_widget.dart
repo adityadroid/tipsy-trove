@@ -6,14 +6,17 @@ class BottomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBarView(
-      children: DrinkType.values
-          .map(
-            (drinkType) => DrinksListWidget(
-              drinkType: drinkType,
-            ),
-          )
-          .toList(),
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: TabBarView(
+        children: DrinkType.values
+            .map(
+              (drinkType) => DrinksListWidget(
+                drinkType: drinkType,
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }

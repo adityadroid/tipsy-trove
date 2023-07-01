@@ -13,6 +13,7 @@ class SearchWidget extends StatelessWidget {
       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
       sliver: SliverSafeArea(
         top: false,
+        bottom: false,
         sliver: SliverAppBar(
           elevation: 0,
           expandedHeight: context.height * 0.4,
