@@ -17,7 +17,17 @@ class DrinksListWidget extends StatelessWidget {
       create: (context) => DrinkCategoryBloc(
         drinksRepository: context.read<DrinksRepository>(),
       )..add(InitEvent(drinkType: drinkType)),
-      child: const DrinksListView(),
+      child: CustomScrollView(
+        key: PageStorageKey<String>(drinkType.key),
+        slivers: [
+          SliverOverlapInjector(
+            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
+              context,
+            ),
+          ),
+          const DrinksListView(),
+        ],
+      ),
     );
   }
 }
@@ -31,20 +41,24 @@ class DrinksListView extends StatelessWidget {
         bloc: context.read<DrinkCategoryBloc>(),
         builder: (context, state) {
           return state.when(
-            initial: () => const LoadingIndicator(),
-            loading: () => const LoadingIndicator(),
-            loaded: (List<Drink> drinks) => GridView.builder(
-              itemCount: drinks.length,
-              padding: const EdgeInsets.all(8),
+            initial: () => const SliverFillRemaining(child: LoadingIndicator()),
+            loading: () => const SliverFillRemaining(
+              child: LoadingIndicator(),
+            ),
+            loaded: (List<Drink> drinks) => SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 childAspectRatio: 0.9,
               ),
-              itemBuilder: (BuildContext context, int index) {
-                return GridItem(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return GridItem(
                     image: drinks[index].strDrinkThumb ?? '',
-                    title: drinks[index].strDrink ?? '');
-              },
+                    title: drinks[index].strDrink ?? '',
+                  );
+                },
+                childCount: drinks.length,
+              ),
             ),
             error: () => const AppErrorWidget(),
           );
@@ -57,6 +71,7 @@ class GridItem extends StatelessWidget {
   final String title;
 
   GridItem({required this.image, required this.title});
+
   @override
   Widget build(BuildContext context) {
     return Padding(

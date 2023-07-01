@@ -6,30 +6,14 @@ class BottomWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFillRemaining(
-      child: DefaultTabController(
-        length: DrinkType.values.length,
-        child: Column(
-          children: [
-            TabBar(
-              tabs: DrinkType.values
-                  .map((drinkType) => Tab(
-                        text: drinkType.title(context),
-                      ))
-                  .toList(),
+    return TabBarView(
+      children: DrinkType.values
+          .map(
+            (drinkType) => DrinksListWidget(
+              drinkType: drinkType,
             ),
-            Expanded(
-              child: TabBarView(
-                children: DrinkType.values
-                    .map((drinkType) => DrinksListWidget(
-                          drinkType: drinkType,
-                        ))
-                    .toList(),
-              ),
-            ),
-          ],
-        ),
-      ),
+          )
+          .toList(),
     );
   }
 }
