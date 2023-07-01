@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tipsy_trove/drink_category/drink_category.dart';
 import 'package:tipsy_trove/gen/assets.gen.dart';
 import 'package:tipsy_trove/l10n/l10n.dart';
 import 'package:tipsy_trove/utils/context_extensions.dart';
+import 'package:tipsy_trove/utils/drink_title_extension.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});

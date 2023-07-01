@@ -4,8 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:drinks_api/drinks_api.dart';
 import 'package:drinks_repository/drinks_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tipsy_trove/drink_category/drink_category.dart';
-
+import 'package:tipsy_trove/utils/drink_title_extension.dart';
 part 'drink_category_bloc.freezed.dart';
 
 part 'drink_category_event.dart';

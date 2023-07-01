@@ -3,7 +3,8 @@ import 'package:drinks_repository/drinks_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tipsy_trove/drink_category/bloc/drink_category_bloc.dart';
-import 'package:tipsy_trove/drink_category/widgets/drink_type_extension.dart';
+import 'package:tipsy_trove/drink_category/widgets/drink_item.dart';
+import 'package:tipsy_trove/utils/drink_title_extension.dart';
 import 'package:ui_kit/ui_kit.dart';
 
 class DrinksListWidget extends StatelessWidget {
@@ -52,7 +53,7 @@ class DrinksListView extends StatelessWidget {
               ),
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  return GridItem(
+                  return DrinkItem(
                     image: drinks[index].strDrinkThumb ?? '',
                     title: drinks[index].strDrink ?? '',
                   );
@@ -65,47 +66,5 @@ class DrinksListView extends StatelessWidget {
             ),
           );
         });
-  }
-}
-
-class GridItem extends StatelessWidget {
-  final String image;
-  final String title;
-
-  GridItem({required this.image, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(8),
-              ),
-              child: Image.network(
-                image,
-                fit: BoxFit.cover,
-                height: 150,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                title,
-                style: Theme.of(context).textTheme.titleMedium,
-                maxLines: 1,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }

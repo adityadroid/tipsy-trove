@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipsy_trove/home/view/bottom_widget.dart';
 import 'package:tipsy_trove/home/view/search_widget.dart';
+import 'package:tipsy_trove/utils/drink_title_extension.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: DefaultTabController(
-        length: 4,
+        length: DrinkType.values.length,
         child: NestedScrollView(
           headerSliverBuilder: (context, bool isInnerBoxScrolled) => <Widget>[
             const SearchWidget(),
