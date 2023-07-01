@@ -11,14 +11,17 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white,
-        colorSchemeSeed: const Color(0xFFFFCA28),
-        appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
-        tabBarTheme: const TabBarTheme(
+          scaffoldBackgroundColor: Colors.white,
+          colorSchemeSeed: const Color(0xFFFFCA28),
+          primaryColorLight: const Color(0xFFFFDF7E),
+          appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
+          tabBarTheme: const TabBarTheme(
             labelColor: Colors.black54,
             unselectedLabelColor: Colors.black38,
-            labelPadding: EdgeInsets.all(2),),
-      ),
+            labelPadding: EdgeInsets.all(2),
+          ),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: Color(0xFFFFF2CB))),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const HomePage(),

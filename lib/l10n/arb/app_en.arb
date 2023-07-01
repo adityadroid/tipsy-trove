@@ -16,12 +16,16 @@
     "@nonAlcoholicLabel": {
         "description": "Title for Non-Alcoholic drinks tab"
     },
-    "cocktailsLabel":"Cocktails",
+    "cocktailsLabel": "Cocktails",
     "@cocktailsLabel": {
         "description": "Title for Cocktails tab"
     },
-    "ordinaryDrinksLabel":"Basics",
+    "ordinaryDrinksLabel": "Basics",
     "@ordinaryDrinksLabel": {
         "description": "Title for Ordinary Drinks tab"
+    },
+    "randomDrinkLabel": "Mix it up!",
+    "@randomDrinkLabel": {
+        "description": "Title for Random drink button"
     }
 }

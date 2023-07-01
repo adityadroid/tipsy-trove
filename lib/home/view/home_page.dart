@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tipsy_trove/home/view/bottom_widget.dart';
 import 'package:tipsy_trove/home/view/search_widget.dart';
+import 'package:tipsy_trove/utils/context_extensions.dart';
 import 'package:tipsy_trove/utils/drink_title_extension.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,6 +19,12 @@ class HomePage extends StatelessWidget {
           body: const BottomWidget(),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {},
+        icon: const Icon(Icons.auto_awesome),
+        label: const Text('Mix it up!'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
