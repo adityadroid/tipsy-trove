@@ -16,8 +16,6 @@ class App extends StatelessWidget {
           primaryColorLight: const Color(0xFFFFDF7E),
           appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
           tabBarTheme: const TabBarTheme(
-            labelColor: Colors.black54,
-            unselectedLabelColor: Colors.black38,
             labelPadding: EdgeInsets.all(2),
           ),
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
