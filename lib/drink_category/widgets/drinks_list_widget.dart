@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tipsy_trove/drink_category/bloc/drink_category_bloc.dart';
 import 'package:tipsy_trove/drink_category/widgets/drink_type_extension.dart';
+import 'package:ui_kit/ui_kit.dart';
 
 class DrinksListWidget extends StatelessWidget {
   const DrinksListWidget({required this.drinkType, super.key});
@@ -30,15 +31,64 @@ class DrinksListView extends StatelessWidget {
         bloc: context.read<DrinkCategoryBloc>(),
         builder: (context, state) {
           return state.when(
-              initial: () => const CircularProgressIndicator(),
-              loading: () => const CircularProgressIndicator(),
-              loaded: (List<Drink> drinks) => ListView.builder(
-                    itemCount: drinks.length,
-                    itemBuilder: (context, index) => ListTile(
-                      title: Text(drinks[index].strDrink ?? ''),
-                    ),
-                  ),
-              error: () => const Text('error'));
+            initial: () => const LoadingIndicator(),
+            loading: () => const LoadingIndicator(),
+            loaded: (List<Drink> drinks) => GridView.builder(
+              itemCount: drinks.length,
+              padding: const EdgeInsets.all(8),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.9,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return GridItem(
+                    image: drinks[index].strDrinkThumb ?? '',
+                    title: drinks[index].strDrink ?? '');
+              },
+            ),
+            error: () => const AppErrorWidget(),
+          );
         });
+  }
+}
+
+class GridItem extends StatelessWidget {
+  final String image;
+  final String title;
+
+  GridItem({required this.image, required this.title});
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(4),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(8),
+              ),
+              child: Image.network(
+                image,
+                fit: BoxFit.cover,
+                height: 150,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleMedium,
+                maxLines: 1,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -10,15 +10,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+        useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
-        ),
+        colorSchemeSeed: const Color(0xFFFFCA28),
+        appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
         tabBarTheme: const TabBarTheme(
             labelColor: Colors.black54,
             unselectedLabelColor: Colors.black38,
-            labelPadding: EdgeInsets.all(2)),
+            labelPadding: EdgeInsets.all(2),),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

@@ -25,6 +25,8 @@ dependencies:
   drinks_repository:
     path: packages/drinks_repository
   freezed_annotation: ^2.2.0
+  ui_kit:
+    path: packages/ui_kit
 
 
 dev_dependencies:

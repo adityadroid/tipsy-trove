@@ -9,7 +9,7 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       elevation: 0,
-      expandedHeight: context.height * 0.6,
+      expandedHeight: context.height * 0.3,
       pinned: true,
       backgroundColor: Colors.white,
       flexibleSpace: FlexibleSpaceBar(

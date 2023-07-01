@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:drinks_api/drinks_api.dart';
 import 'package:drinks_repository/drinks_repository.dart';
@@ -22,6 +24,7 @@ class DrinkCategoryBloc extends Bloc<DrinkCategoryEvent, DrinkCategoryState> {
   Future<void> _init(InitEvent event, Emitter emit) async {
     try {
       final drinks = await _drinksRepository.getDrinksByType(event.drinkType);
+      drinks.shuffle(Random());
       final state = Loaded(drinks);
       emit(state);
     } on (Exception e,) {
