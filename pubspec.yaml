@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   bloc: ^8.1.2
+  dio: ^5.2.1+1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
@@ -15,20 +16,31 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.18.0
-  dio: ^5.2.1+1
+  types:
+    path: packages/types
+  drinks_rest_api:
+    path: packages/drinks_rest_api
+  drinks_api:
+    path: packages/drinks_api
+  drinks_repository:
+    path: packages/drinks_repository
   freezed_annotation: ^2.2.0
-  json_annotation: ^4.8.1
+
 
 dev_dependencies:
   bloc_test: ^9.1.2
-  build_runner: ^2.4.5
+  build_runner: ^2.4.6
+  flutter_gen_runner: ^5.3.0
   flutter_test:
     sdk: flutter
-  freezed: ^2.3.5
-  json_serializable: ^6.7.0
   mocktail: ^0.3.0
   very_good_analysis: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+  freezed: ^2.3.5
 
 flutter:
-  uses-material-design: true
   generate: true
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/config/
