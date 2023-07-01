@@ -9,22 +9,42 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsConfigGen {
+  const $AssetsConfigGen();
+
+  /// File path: assets/config/development.ev
+  String get development => 'assets/config/development.ev';
+
+  /// File path: assets/config/production.env
+  String get production => 'assets/config/production.env';
+
+  /// File path: assets/config/staging.env
+  String get staging => 'assets/config/staging.env';
+
+  /// List of all assets
+  List<String> get values => [development, production, staging];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
   /// File path: assets/icons/booze.png
   AssetGenImage get booze => const AssetGenImage('assets/icons/booze.png');
 
+  /// File path: assets/icons/icon.png
+  AssetGenImage get icon => const AssetGenImage('assets/icons/icon.png');
+
   /// File path: assets/icons/search.png
   AssetGenImage get search => const AssetGenImage('assets/icons/search.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [booze, search];
+  List<AssetGenImage> get values => [booze, icon, search];
 }
 
 class Assets {
   Assets._();
 
+  static const $AssetsConfigGen config = $AssetsConfigGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
 }
 
