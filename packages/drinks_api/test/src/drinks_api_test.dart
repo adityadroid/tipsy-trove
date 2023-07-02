@@ -1,11 +1,19 @@
-// ignore_for_file: prefer_const_constructors
-import 'package:drinks_api/drinks_api.dart';
+import 'package:drinks_api/src/drinks_api.dart';
 import 'package:test/test.dart';
+
+class TestDrinksApi extends DrinksApi {
+  TestDrinksApi() : super();
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) {
+    return super.noSuchMethod(invocation);
+  }
+}
 
 void main() {
   group('DrinksApi', () {
-    test('can be instantiated', () {
-    //  expect(DrinksApi(), isNotNull);
+    test('can be constructed', () {
+      expect(TestDrinksApi.new, returnsNormally);
     });
   });
 }
