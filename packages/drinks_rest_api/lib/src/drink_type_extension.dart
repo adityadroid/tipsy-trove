@@ -1,4 +1,5 @@
 import 'package:types/types.dart';
+export 'package:types/types.dart';
 
 ///{@template rest_path_extension}
 ///Returns the name of the filter to be used in the rest path as a parameter
