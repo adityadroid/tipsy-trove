@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'drink.freezed.dart';
 part 'drink.g.dart';
 
@@ -9,14 +10,14 @@ part 'drink.g.dart';
 /// {@endtemplate}
 @freezed
 class Drink with _$Drink {
-    /// {@macro drink}
-    const factory Drink({
-        String? strDrink,
-        String? strDrinkThumb,
-        String? idDrink,
-    }) = _Drink;
+  /// {@macro drink}
+  const factory Drink({
+    String? strDrink,
+    String? strDrinkThumb,
+    String? idDrink,
+  }) = _Drink;
 
-    /// Generates a [Drink] from JSON
-    /// {@macro drink}
-    factory Drink.fromJson(Map<String, Object?> json) => _$DrinkFromJson(json);
+  /// Generates a [Drink] from JSON
+  /// {@macro drink}
+  factory Drink.fromJson(Map<String, Object?> json) => _$DrinkFromJson(json);
 }

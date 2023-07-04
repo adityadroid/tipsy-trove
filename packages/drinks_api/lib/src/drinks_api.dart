@@ -1,5 +1,6 @@
 import 'package:drinks_api/src/drink.dart';
 import 'package:types/types.dart';
+
 /// {@template drinks_api}
 /// API layer to fetch drinks
 /// {@endtemplate}

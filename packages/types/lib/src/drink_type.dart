@@ -2,13 +2,17 @@
 enum DrinkType {
   ///alcoholic drink
   alcoholic,
+
   ///non alcoholic
   nonAlcoholic,
+
   ///ordinary drink
   ordinary,
+
   ///cocktail
   cocktail,
 }
+
 /// Extension to get the key used for a particular drink type on the backend
 extension DrinkTypeExtension on DrinkType {
   ///method to get the actual key

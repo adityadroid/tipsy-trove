@@ -4,5 +4,5 @@ part of 'drink_category_bloc.dart';
 class DrinkCategoryEvent with _$DrinkCategoryEvent {
   const factory DrinkCategoryEvent.init({
     required DrinkType drinkType,
-}) = InitEvent;
+  }) = InitEvent;
 }

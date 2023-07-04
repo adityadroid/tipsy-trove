@@ -9,7 +9,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        useMaterial3: true,
+          useMaterial3: true,
           scaffoldBackgroundColor: Colors.white,
           colorSchemeSeed: const Color(0xFFFFCA28),
           primaryColorLight: const Color(0xFFFFDF7E),
