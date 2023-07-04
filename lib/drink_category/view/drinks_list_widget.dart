@@ -3,7 +3,7 @@ import 'package:drinks_repository/drinks_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tipsy_trove/drink_category/bloc/drink_category_bloc.dart';
-import 'package:tipsy_trove/drink_category/widgets/drink_item.dart';
+import 'package:tipsy_trove/drink_category/view/drink_item.dart';
 import 'package:tipsy_trove/utils/drink_title_extension.dart';
 import 'package:ui_kit/ui_kit.dart';
 
