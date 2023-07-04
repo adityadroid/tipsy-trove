@@ -12,6 +12,6 @@ Future<void> main() async {
   await dotenv.load(fileName: Assets.config.production);
   FlavorConfig.fromMap(dotenv.env);
   await bootstrap(
-        () => const App(),
+    () => const App(),
   );
 }

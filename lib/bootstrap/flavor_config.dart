@@ -1,5 +1,6 @@
 class FlavorConfig {
   FlavorConfig._internal();
+
   /// Creates an instance of `FlavorConfig` from the provided `configMap`.
   ///
   /// The `apiBaseUrl` field is mapped to the `"BASE_URL"` key in the `configMap'
@@ -10,6 +11,7 @@ class FlavorConfig {
     _instance!.apiBaseUrl = configMap['API_BASE_URL'] ?? '';
     return _instance!;
   }
+
   /// Retrieves the current instance of `FlavorConfig`.
   static FlavorConfig getInstance() {
     return _instance!;

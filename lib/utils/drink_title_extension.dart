@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tipsy_trove/l10n/l10n.dart';
 import 'package:types/types.dart';
-export 'package:types/types.dart';
-extension TitleExtension on DrinkType {
 
+export 'package:types/types.dart';
+
+extension TitleExtension on DrinkType {
   String title(BuildContext context) {
     switch (this) {
       case DrinkType.alcoholic:

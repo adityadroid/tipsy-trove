@@ -9,7 +9,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   /// This is where you initialize the flavor
-  await dotenv.load(fileName:  Assets.config.development);
+  await dotenv.load(fileName: Assets.config.development);
   FlavorConfig.fromMap(dotenv.env);
   await bootstrap(
     () => const App(),

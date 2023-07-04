@@ -25,6 +25,8 @@ dependencies:
   drinks_repository:
     path: packages/drinks_repository
   freezed_annotation: ^2.2.0
+  ui_kit:
+    path: packages/ui_kit
 
 
 dev_dependencies:
@@ -34,6 +36,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
+  mocktail_image_network: ^0.3.1
   very_good_analysis: ^5.0.0
   flutter_launcher_icons: ^0.13.1
   freezed: ^2.3.5

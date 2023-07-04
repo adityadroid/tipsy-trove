@@ -1,7 +1,6 @@
 import 'package:drinks_repository/drinks_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tipsy_trove/drink_category/bloc/drink_category_bloc.dart';
 
 class InjectionContainer extends StatelessWidget {
   const InjectionContainer({
@@ -17,7 +16,7 @@ class InjectionContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [RepositoryProvider.value(value: drinksRepository)],
-      child:  child,
+      child: child,
     );
   }
 }
