@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:drinks_api/drinks_api.dart';
 import 'package:drinks_rest_api/src/drink_type_extension.dart';
-import 'package:types/types.dart';
 
 /// {@template drinks_rest_api}
 /// Actual REST API layer to fetch drinks
@@ -22,5 +21,20 @@ class DrinksRestApi implements DrinksApi {
         .map(Drink.fromJson)
         .toList();
     return drinks;
+  }
+
+  @override
+  Future<DrinkDetail?> getRandomDrink() async {
+    //check which filter to use
+    const path = '/random.php';
+    final response = await _dio.get(path);
+    final listResponse =
+        (response.data as Map<String, dynamic>)['drinks'] as List;
+    if (listResponse == null || listResponse.isEmpty) {
+      return null;
+    }
+    final drinkDetail =
+        DrinkDetail.fromJson(listResponse.first as Map<String, dynamic>);
+    return drinkDetail;
   }
 }

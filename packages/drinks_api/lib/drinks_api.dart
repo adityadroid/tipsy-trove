@@ -1,5 +1,5 @@
 /// API layer to fetch drinks
 library drinks_api;
 
-export 'src/drink.dart';
-export 'src/drinks_api.dart';
+export 'src/api/drinks_api.dart';
+export 'src/models/models.dart';

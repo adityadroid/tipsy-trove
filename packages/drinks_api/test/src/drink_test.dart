@@ -1,4 +1,4 @@
-import 'package:drinks_api/src/drink.dart';
+import 'package:drinks_api/src/models/models.dart';
 import 'package:test/test.dart';
 
 void main() {

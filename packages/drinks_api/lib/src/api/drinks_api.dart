@@ -1,4 +1,5 @@
-import 'package:drinks_api/src/drink.dart';
+import 'package:drinks_api/src/models/drink.dart';
+import 'package:drinks_api/src/models/drink_detail.dart';
 import 'package:types/types.dart';
 
 /// {@template drinks_api}
@@ -10,4 +11,7 @@ abstract class DrinksApi {
 
   /// Returns a list of [Drink] based on type
   Future<List<Drink>> getDrinksByType(DrinkType drinkType);
+
+  /// Returns a random [DrinkDetail]
+  Future<DrinkDetail?> getRandomDrink();
 }
