@@ -14,7 +14,7 @@ void main() {
       registerFallbackValue(DrinkType.ordinary);
       repo = MockDrinksRepository();
     });
-    test('initial state is .initial() ', () {
+    test('initial state is .loading() ', () {
       expect(
         DrinkCategoryBloc(drinksRepository: repo).state,
         equals(const DrinkCategoryState.loading()),
@@ -28,7 +28,10 @@ void main() {
       },
       build: () => DrinkCategoryBloc(drinksRepository: repo),
       act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
-      expect: () => [const Loaded([])],
+      expect: () => [
+        const DrinkCategoryState.loading(),
+        const DrinkCategoryState.loaded([])
+      ],
     );
 
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(
@@ -55,7 +58,10 @@ void main() {
       },
       build: () => DrinkCategoryBloc(drinksRepository: repo),
       act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
-      expect: () => [const Loaded([])],
+      expect: () => [
+        const DrinkCategoryState.loading(),
+        const DrinkCategoryState.error()
+      ],
       errors: () => [isA<Exception>()],
     );
   });
