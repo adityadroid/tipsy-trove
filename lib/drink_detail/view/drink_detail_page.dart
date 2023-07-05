@@ -7,10 +7,8 @@ class DrinkDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text('drink details'),
-      ),
+    return const Scaffold(
+      body: Text('drink details'),
     );
   }
 }

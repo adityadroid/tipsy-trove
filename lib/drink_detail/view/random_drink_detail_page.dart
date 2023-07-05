@@ -32,9 +32,10 @@ class RandomDrinkDetailView extends StatelessWidget {
         bloc: context.read<DrinkDetailBloc>(),
         builder: (context, state) {
           return state.when(
-              loading: () => const LoadingDrinkWidget(),
-              loaded: (detail) => DrinkDetailWidget(detail: detail),
-              error: () => const AppErrorWidget());
+            loading: () => const LoadingDrinkWidget(),
+            loaded: (detail) => DrinkDetailWidget(detail: detail),
+            error: () => const AppErrorWidget(),
+          );
         },
       ),
     );

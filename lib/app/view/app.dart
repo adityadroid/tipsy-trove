@@ -16,7 +16,7 @@ class App extends StatelessWidget {
           GoRoute(
             path: HomePage.routeName,
             name: HomePage.routeName,
-            builder: (context, state) => const RandomDrinkDetailPage(),
+            builder: (context, state) => const HomePage(),
           ),
           GoRoute(
             path: DrinkDetailPage.routeName,

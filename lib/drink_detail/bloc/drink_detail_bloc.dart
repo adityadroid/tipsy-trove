@@ -4,9 +4,7 @@ import 'package:drinks_repository/drinks_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'drink_detail_bloc.freezed.dart';
-
 part 'drink_detail_event.dart';
-
 part 'drink_detail_state.dart';
 
 class DrinkDetailBloc extends Bloc<DrinkDetailEvent, DrinkDetailState> {
@@ -28,12 +26,12 @@ class DrinkDetailBloc extends Bloc<DrinkDetailEvent, DrinkDetailState> {
     try {
       final drink = await _drinksRepository.getRandomDrink();
       if (drink == null) {
-        emit(const DrinkDetailState.error());
+        emitter(const DrinkDetailState.error());
       } else {
-        emit(DrinkDetailState.loaded(drink));
+        emitter(DrinkDetailState.loaded(drink));
       }
     } on (Exception e,) {
-      emit(const DrinkDetailState.error());
+      emitter(const DrinkDetailState.error());
     }
   }
 
