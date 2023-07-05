@@ -5,10 +5,9 @@ import 'package:drinks_api/drinks_api.dart';
 import 'package:drinks_repository/drinks_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tipsy_trove/utils/drink_title_extension.dart';
+
 part 'drink_category_bloc.freezed.dart';
-
 part 'drink_category_event.dart';
-
 part 'drink_category_state.dart';
 
 class DrinkCategoryBloc extends Bloc<DrinkCategoryEvent, DrinkCategoryState> {
@@ -20,7 +19,7 @@ class DrinkCategoryBloc extends Bloc<DrinkCategoryEvent, DrinkCategoryState> {
     });
   }
 
-  Future<void> _init(InitEvent event, Emitter emit) async {
+  Future<void> _init(InitEvent event, Emitter<DrinkCategoryState> emit) async {
     try {
       final drinks = await _drinksRepository.getDrinksByType(event.drinkType);
       drinks.shuffle(Random());

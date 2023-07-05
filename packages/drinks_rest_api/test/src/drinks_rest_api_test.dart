@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:drinks_rest_api/drinks_rest_api.dart';
 import 'package:drinks_rest_api/src/drink_type_extension.dart';
-import 'package:test/test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:test/test.dart';
 
 class MockDio extends Mock implements Dio {}
 
@@ -38,7 +38,8 @@ void main() {
         requestOptions: RequestOptions(path: path),
       );
 
-      when(() => mockDio.get(path)).thenAnswer((_) async => response);
+      when(() => mockDio.get<Map<String, dynamic>>(path))
+          .thenAnswer((_) async => response);
 
       final drinks = await drinksRestApi.getDrinksByType(drinkType);
 

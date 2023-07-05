@@ -9,16 +9,18 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          useMaterial3: true,
-          scaffoldBackgroundColor: Colors.white,
-          colorSchemeSeed: const Color(0xFFFFCA28),
-          primaryColorLight: const Color(0xFFFFDF7E),
-          appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
-          tabBarTheme: const TabBarTheme(
-            labelPadding: EdgeInsets.all(2),
-          ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: Color(0xFFFFF2CB))),
+        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
+        colorSchemeSeed: const Color(0xFFFFCA28),
+        primaryColorLight: const Color(0xFFFFDF7E),
+        appBarTheme: const AppBarTheme(color: Color(0xFFFFCA28)),
+        tabBarTheme: const TabBarTheme(
+          labelPadding: EdgeInsets.all(2),
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFFFFF2CB),
+        ),
+      ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const HomePage(),

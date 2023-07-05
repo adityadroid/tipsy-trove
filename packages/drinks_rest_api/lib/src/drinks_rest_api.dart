@@ -15,8 +15,8 @@ class DrinksRestApi implements DrinksApi {
   Future<List<Drink>> getDrinksByType(DrinkType type) async {
     //check which filter to use
     final path = '/filter.php?${type.restFilterName}=${type.key}';
-    final response = await _dio.get(path);
-    final drinks = ((response.data as Map<String, dynamic>)['drinks'] as List)
+    final response = await _dio.get<Map<String, dynamic>>(path);
+    final drinks = (response.data!['drinks'] as List)
         .cast<Map<String, dynamic>>()
         .map(Drink.fromJson)
         .toList();
@@ -27,10 +27,9 @@ class DrinksRestApi implements DrinksApi {
   Future<DrinkDetail?> getRandomDrink() async {
     //check which filter to use
     const path = '/random.php';
-    final response = await _dio.get(path);
-    final listResponse =
-        (response.data as Map<String, dynamic>)['drinks'] as List;
-    if (listResponse == null || listResponse.isEmpty) {
+    final response = await _dio.get<Map<String, dynamic>>(path);
+    final listResponse = response.data!['drinks'] as List;
+    if (listResponse.isEmpty) {
       return null;
     }
     final drinkDetail =

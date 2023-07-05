@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:drinks_api/src/models/ingredient.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -8,7 +10,7 @@ part 'drink_detail.g.dart';
 /// {@template drink_detail}
 ///  A single drink detail
 ///
-/// Contains a [strDrink] ,[strDrinkThumb] and [idDrink]
+/// Contains a [drinkName] ,[thumbnailUrl] and [id]
 /// {@endtemplate}
 @freezed
 class DrinkDetail with _$DrinkDetail {
@@ -64,65 +66,65 @@ class DrinkDetail with _$DrinkDetail {
 
   /// Returns a list of ingredients
   List<Ingredient> get ingredients => [
-        Ingredient(
-          name: ingredient1,
-          measure: measure1,
-        ),
-        Ingredient(
-          name: ingredient2,
-          measure: measure1,
-        ),
-        Ingredient(
-          name: ingredient3,
-          measure: measure2,
-        ),
-        Ingredient(
-          name: ingredient4,
-          measure: measure3,
-        ),
-        Ingredient(
-          name: ingredient5,
-          measure: measure4,
-        ),
-        Ingredient(
-          name: ingredient6,
-          measure: measure5,
-        ),
-        Ingredient(
-          name: ingredient7,
-          measure: measure6,
-        ),
-        Ingredient(
-          name: ingredient8,
-          measure: measure7,
-        ),
-        Ingredient(
-          name: ingredient9,
-          measure: measure8,
-        ),
-        Ingredient(
-          name: ingredient10,
-          measure: measure9,
-        ),
-        Ingredient(
-          name: ingredient11,
-          measure: measure10,
-        ),
-        Ingredient(
-          name: ingredient12,
-          measure: measure11,
-        ),
-        Ingredient(
-          name: ingredient13,
-          measure: measure12,
-        ),
-        Ingredient(
-          name: ingredient14,
-          measure: measure13,
-        ),
-        Ingredient(
-          name: ingredient15,
-          measure: measure14,
-        ),
-      ];
+    Ingredient(
+      name: ingredient1,
+      measure: measure1,
+    ),
+    Ingredient(
+      name: ingredient2,
+      measure: measure1,
+    ),
+    Ingredient(
+      name: ingredient3,
+      measure: measure2,
+    ),
+    Ingredient(
+      name: ingredient4,
+      measure: measure3,
+    ),
+    Ingredient(
+      name: ingredient5,
+      measure: measure4,
+    ),
+    Ingredient(
+      name: ingredient6,
+      measure: measure5,
+    ),
+    Ingredient(
+      name: ingredient7,
+      measure: measure6,
+    ),
+    Ingredient(
+      name: ingredient8,
+      measure: measure7,
+    ),
+    Ingredient(
+      name: ingredient9,
+      measure: measure8,
+    ),
+    Ingredient(
+      name: ingredient10,
+      measure: measure9,
+    ),
+    Ingredient(
+      name: ingredient11,
+      measure: measure10,
+    ),
+    Ingredient(
+      name: ingredient12,
+      measure: measure11,
+    ),
+    Ingredient(
+      name: ingredient13,
+      measure: measure12,
+    ),
+    Ingredient(
+      name: ingredient14,
+      measure: measure13,
+    ),
+    Ingredient(
+      name: ingredient15,
+      measure: measure14,
+    ),
+  ];
 }

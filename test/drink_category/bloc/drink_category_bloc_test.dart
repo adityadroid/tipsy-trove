@@ -48,14 +48,15 @@ void main() {
           bloc.state is Loaded && (bloc.state as Loaded).drinks.length == 3,
     );
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(
-        'emits .error() when Exception is encountered',
-        setUp: () {
-          when(() => repo.getDrinksByType(DrinkType.ordinary))
-              .thenThrow(Exception('Something went wrong!'));
-        },
-        build: () => DrinkCategoryBloc(drinksRepository: repo),
-        act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
-        expect: () => [const Loaded([])],
-        errors: () => [isA<Exception>()]);
+      'emits .error() when Exception is encountered',
+      setUp: () {
+        when(() => repo.getDrinksByType(DrinkType.ordinary))
+            .thenThrow(Exception('Something went wrong!'));
+      },
+      build: () => DrinkCategoryBloc(drinksRepository: repo),
+      act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
+      expect: () => [const Loaded([])],
+      errors: () => [isA<Exception>()],
+    );
   });
 }

@@ -55,16 +55,17 @@ class DrinksListView extends StatelessWidget {
                 (BuildContext context, int index) {
                   return DrinkItem(
                     image: drinks[index].strDrinkThumb ?? '',
-                    title: drinks[index].strDrink ?? '',
-                  );
-                },
-                childCount: drinks.length,
-              ),
+                  title: drinks[index].strDrink ?? '',
+                );
+              },
+              childCount: drinks.length,
             ),
-            error: () => const SliverFillRemaining(
-              child: AppErrorWidget(),
-            ),
-          );
-        });
+          ),
+          error: () => const SliverFillRemaining(
+            child: AppErrorWidget(),
+          ),
+        );
+      },
+    );
   }
 }
