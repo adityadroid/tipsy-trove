@@ -13,7 +13,7 @@ part 'drink_category_state.dart';
 class DrinkCategoryBloc extends Bloc<DrinkCategoryEvent, DrinkCategoryState> {
   DrinkCategoryBloc({required DrinksRepository drinksRepository})
       : _drinksRepository = drinksRepository,
-        super(const DrinkCategoryState.initial()) {
+        super(const DrinkCategoryState.loading()) {
     on<DrinkCategoryEvent>((event, emit) async {
       await event.map(init: (event) async => _init(event, emit));
     });
@@ -21,12 +21,13 @@ class DrinkCategoryBloc extends Bloc<DrinkCategoryEvent, DrinkCategoryState> {
 
   Future<void> _init(InitEvent event, Emitter<DrinkCategoryState> emit) async {
     try {
+      emit(const DrinkCategoryState.loading());
       final drinks = await _drinksRepository.getDrinksByType(event.drinkType);
       drinks.shuffle(Random());
-      final state = Loaded(drinks);
+      final state = DrinkCategoryState.loaded(drinks);
       emit(state);
     } on (Exception e,) {
-      emit(const Error());
+      emit(const DrinkCategoryState.error());
     }
   }
 

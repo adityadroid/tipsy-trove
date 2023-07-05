@@ -17,7 +17,7 @@ void main() {
     test('initial state is .initial() ', () {
       expect(
         DrinkCategoryBloc(drinksRepository: repo).state,
-        equals(const DrinkCategoryState.initial()),
+        equals(const DrinkCategoryState.loading()),
       );
     });
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(

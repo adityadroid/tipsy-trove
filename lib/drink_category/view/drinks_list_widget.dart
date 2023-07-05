@@ -42,7 +42,6 @@ class DrinksListView extends StatelessWidget {
         bloc: context.read<DrinkCategoryBloc>(),
         builder: (context, state) {
           return state.when(
-            initial: () => const SliverFillRemaining(child: LoadingIndicator()),
             loading: () => const SliverFillRemaining(
               child: LoadingIndicator(),
             ),
