@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'drink_category_bloc.dart';
+part of 'drink_detail_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,167 +15,258 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$DrinkCategoryEvent {
-  DrinkType get drinkType => throw _privateConstructorUsedError;
+mixin _$DrinkDetailEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DrinkType drinkType) init,
+    required TResult Function() random,
+    required TResult Function(String drinkId) fromId,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DrinkType drinkType)? init,
+    TResult? Function()? random,
+    TResult? Function(String drinkId)? fromId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DrinkType drinkType)? init,
+    TResult Function()? random,
+    TResult Function(String drinkId)? fromId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitEvent value) init,
+    required TResult Function(RandomDrinkEvent value) random,
+    required TResult Function(FromIdDrinkEvent value) fromId,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InitEvent value)? init,
+    TResult? Function(RandomDrinkEvent value)? random,
+    TResult? Function(FromIdDrinkEvent value)? fromId,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitEvent value)? init,
+    TResult Function(RandomDrinkEvent value)? random,
+    TResult Function(FromIdDrinkEvent value)? fromId,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $DrinkCategoryEventCopyWith<DrinkCategoryEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DrinkCategoryEventCopyWith<$Res> {
-  factory $DrinkCategoryEventCopyWith(
-          DrinkCategoryEvent value, $Res Function(DrinkCategoryEvent) then) =
-      _$DrinkCategoryEventCopyWithImpl<$Res, DrinkCategoryEvent>;
-  @useResult
-  $Res call({DrinkType drinkType});
+abstract class $DrinkDetailEventCopyWith<$Res> {
+  factory $DrinkDetailEventCopyWith(
+          DrinkDetailEvent value, $Res Function(DrinkDetailEvent) then) =
+      _$DrinkDetailEventCopyWithImpl<$Res, DrinkDetailEvent>;
 }
 
 /// @nodoc
-class _$DrinkCategoryEventCopyWithImpl<$Res, $Val extends DrinkCategoryEvent>
-    implements $DrinkCategoryEventCopyWith<$Res> {
-  _$DrinkCategoryEventCopyWithImpl(this._value, this._then);
+class _$DrinkDetailEventCopyWithImpl<$Res, $Val extends DrinkDetailEvent>
+    implements $DrinkDetailEventCopyWith<$Res> {
+  _$DrinkDetailEventCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
+}
 
-  @pragma('vm:prefer-inline')
+/// @nodoc
+abstract class _$$RandomDrinkEventCopyWith<$Res> {
+  factory _$$RandomDrinkEventCopyWith(
+          _$RandomDrinkEvent value, $Res Function(_$RandomDrinkEvent) then) =
+      __$$RandomDrinkEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RandomDrinkEventCopyWithImpl<$Res>
+    extends _$DrinkDetailEventCopyWithImpl<$Res, _$RandomDrinkEvent>
+    implements _$$RandomDrinkEventCopyWith<$Res> {
+  __$$RandomDrinkEventCopyWithImpl(
+      _$RandomDrinkEvent _value, $Res Function(_$RandomDrinkEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RandomDrinkEvent implements RandomDrinkEvent {
+  const _$RandomDrinkEvent();
+
   @override
-  $Res call({
-    Object? drinkType = null,
+  String toString() {
+    return 'DrinkDetailEvent.random()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RandomDrinkEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() random,
+    required TResult Function(String drinkId) fromId,
   }) {
-    return _then(_value.copyWith(
-      drinkType: null == drinkType
-          ? _value.drinkType
-          : drinkType // ignore: cast_nullable_to_non_nullable
-              as DrinkType,
-    ) as $Val);
+    return random();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? random,
+    TResult? Function(String drinkId)? fromId,
+  }) {
+    return random?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? random,
+    TResult Function(String drinkId)? fromId,
+    required TResult orElse(),
+  }) {
+    if (random != null) {
+      return random();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(RandomDrinkEvent value) random,
+    required TResult Function(FromIdDrinkEvent value) fromId,
+  }) {
+    return random(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(RandomDrinkEvent value)? random,
+    TResult? Function(FromIdDrinkEvent value)? fromId,
+  }) {
+    return random?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(RandomDrinkEvent value)? random,
+    TResult Function(FromIdDrinkEvent value)? fromId,
+    required TResult orElse(),
+  }) {
+    if (random != null) {
+      return random(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$InitEventCopyWith<$Res>
-    implements $DrinkCategoryEventCopyWith<$Res> {
-  factory _$$InitEventCopyWith(
-          _$InitEvent value, $Res Function(_$InitEvent) then) =
-      __$$InitEventCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({DrinkType drinkType});
+abstract class RandomDrinkEvent implements DrinkDetailEvent {
+  const factory RandomDrinkEvent() = _$RandomDrinkEvent;
 }
 
 /// @nodoc
-class __$$InitEventCopyWithImpl<$Res>
-    extends _$DrinkCategoryEventCopyWithImpl<$Res, _$InitEvent>
-    implements _$$InitEventCopyWith<$Res> {
-  __$$InitEventCopyWithImpl(
-      _$InitEvent _value, $Res Function(_$InitEvent) _then)
+abstract class _$$FromIdDrinkEventCopyWith<$Res> {
+  factory _$$FromIdDrinkEventCopyWith(
+          _$FromIdDrinkEvent value, $Res Function(_$FromIdDrinkEvent) then) =
+      __$$FromIdDrinkEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String drinkId});
+}
+
+/// @nodoc
+class __$$FromIdDrinkEventCopyWithImpl<$Res>
+    extends _$DrinkDetailEventCopyWithImpl<$Res, _$FromIdDrinkEvent>
+    implements _$$FromIdDrinkEventCopyWith<$Res> {
+  __$$FromIdDrinkEventCopyWithImpl(
+      _$FromIdDrinkEvent _value, $Res Function(_$FromIdDrinkEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? drinkType = null,
+    Object? drinkId = null,
   }) {
-    return _then(_$InitEvent(
-      drinkType: null == drinkType
-          ? _value.drinkType
-          : drinkType // ignore: cast_nullable_to_non_nullable
-              as DrinkType,
+    return _then(_$FromIdDrinkEvent(
+      drinkId: null == drinkId
+          ? _value.drinkId
+          : drinkId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$InitEvent implements InitEvent {
-  const _$InitEvent({required this.drinkType});
+class _$FromIdDrinkEvent implements FromIdDrinkEvent {
+  const _$FromIdDrinkEvent({required this.drinkId});
 
   @override
-  final DrinkType drinkType;
+  final String drinkId;
 
   @override
   String toString() {
-    return 'DrinkCategoryEvent.init(drinkType: $drinkType)';
+    return 'DrinkDetailEvent.fromId(drinkId: $drinkId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitEvent &&
-            (identical(other.drinkType, drinkType) ||
-                other.drinkType == drinkType));
+            other is _$FromIdDrinkEvent &&
+            (identical(other.drinkId, drinkId) || other.drinkId == drinkId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, drinkType);
+  int get hashCode => Object.hash(runtimeType, drinkId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitEventCopyWith<_$InitEvent> get copyWith =>
-      __$$InitEventCopyWithImpl<_$InitEvent>(this, _$identity);
+  _$$FromIdDrinkEventCopyWith<_$FromIdDrinkEvent> get copyWith =>
+      __$$FromIdDrinkEventCopyWithImpl<_$FromIdDrinkEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(DrinkType drinkType) init,
+    required TResult Function() random,
+    required TResult Function(String drinkId) fromId,
   }) {
-    return init(drinkType);
+    return fromId(drinkId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(DrinkType drinkType)? init,
+    TResult? Function()? random,
+    TResult? Function(String drinkId)? fromId,
   }) {
-    return init?.call(drinkType);
+    return fromId?.call(drinkId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(DrinkType drinkType)? init,
+    TResult Function()? random,
+    TResult Function(String drinkId)? fromId,
     required TResult orElse(),
   }) {
-    if (init != null) {
-      return init(drinkType);
+    if (fromId != null) {
+      return fromId(drinkId);
     }
     return orElse();
   }
@@ -183,84 +274,86 @@ class _$InitEvent implements InitEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitEvent value) init,
+    required TResult Function(RandomDrinkEvent value) random,
+    required TResult Function(FromIdDrinkEvent value) fromId,
   }) {
-    return init(this);
+    return fromId(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(InitEvent value)? init,
+    TResult? Function(RandomDrinkEvent value)? random,
+    TResult? Function(FromIdDrinkEvent value)? fromId,
   }) {
-    return init?.call(this);
+    return fromId?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitEvent value)? init,
+    TResult Function(RandomDrinkEvent value)? random,
+    TResult Function(FromIdDrinkEvent value)? fromId,
     required TResult orElse(),
   }) {
-    if (init != null) {
-      return init(this);
+    if (fromId != null) {
+      return fromId(this);
     }
     return orElse();
   }
 }
 
-abstract class InitEvent implements DrinkCategoryEvent {
-  const factory InitEvent({required final DrinkType drinkType}) = _$InitEvent;
+abstract class FromIdDrinkEvent implements DrinkDetailEvent {
+  const factory FromIdDrinkEvent({required final String drinkId}) =
+      _$FromIdDrinkEvent;
 
-  @override
-  DrinkType get drinkType;
-  @override
+  String get drinkId;
   @JsonKey(ignore: true)
-  _$$InitEventCopyWith<_$InitEvent> get copyWith =>
+  _$$FromIdDrinkEventCopyWith<_$FromIdDrinkEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$DrinkCategoryState {
+mixin _$DrinkDetailState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Drink> drinks) loaded,
+    required TResult Function(DrinkDetail detail) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Drink> drinks)? loaded,
+    TResult? Function(DrinkDetail detail)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Drink> drinks)? loaded,
+    TResult Function(DrinkDetail detail)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(Loaded value) loaded,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
     TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(Loaded value)? loaded,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -269,51 +362,52 @@ mixin _$DrinkCategoryState {
 }
 
 /// @nodoc
-abstract class $DrinkCategoryStateCopyWith<$Res> {
-  factory $DrinkCategoryStateCopyWith(
-          DrinkCategoryState value, $Res Function(DrinkCategoryState) then) =
-      _$DrinkCategoryStateCopyWithImpl<$Res, DrinkCategoryState>;
+abstract class $DrinkDetailStateCopyWith<$Res> {
+  factory $DrinkDetailStateCopyWith(
+          DrinkDetailState value, $Res Function(DrinkDetailState) then) =
+      _$DrinkDetailStateCopyWithImpl<$Res, DrinkDetailState>;
 }
 
 /// @nodoc
-class _$DrinkCategoryStateCopyWithImpl<$Res, $Val extends DrinkCategoryState>
-    implements $DrinkCategoryStateCopyWith<$Res> {
-  _$DrinkCategoryStateCopyWithImpl(this._value, this._then);
+class _$DrinkDetailStateCopyWithImpl<$Res, $Val extends DrinkDetailState>
+    implements $DrinkDetailStateCopyWith<$Res> {
+  _$DrinkDetailStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$LoadingCopyWith<$Res> {
-  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
-      __$$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingCopyWithImpl<$Res>
-    extends _$DrinkCategoryStateCopyWithImpl<$Res, _$Loading>
-    implements _$$LoadingCopyWith<$Res> {
-  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$DrinkDetailStateCopyWithImpl<$Res, _$_Loading>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$Loading implements Loading {
-  const _$Loading();
+class _$_Loading implements _Loading {
+  const _$_Loading();
 
   @override
   String toString() {
-    return 'DrinkCategoryState.loading()';
+    return 'DrinkDetailState.loading()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Loading);
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -323,7 +417,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Drink> drinks) loaded,
+    required TResult Function(DrinkDetail detail) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -333,7 +427,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Drink> drinks)? loaded,
+    TResult? Function(DrinkDetail detail)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -343,7 +437,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Drink> drinks)? loaded,
+    TResult Function(DrinkDetail detail)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -356,7 +450,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(Loaded value) loaded,
     required TResult Function(Error value) error,
   }) {
@@ -366,7 +460,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
     TResult? Function(Error value)? error,
   }) {
@@ -376,7 +470,7 @@ class _$Loading implements Loading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(Loaded value)? loaded,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -388,8 +482,8 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements DrinkCategoryState {
-  const factory Loading() = _$Loading;
+abstract class _Loading implements DrinkDetailState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -397,12 +491,14 @@ abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Drink> drinks});
+  $Res call({DrinkDetail detail});
+
+  $DrinkDetailCopyWith<$Res> get detail;
 }
 
 /// @nodoc
 class __$$LoadedCopyWithImpl<$Res>
-    extends _$DrinkCategoryStateCopyWithImpl<$Res, _$Loaded>
+    extends _$DrinkDetailStateCopyWithImpl<$Res, _$Loaded>
     implements _$$LoadedCopyWith<$Res> {
   __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
@@ -410,33 +506,36 @@ class __$$LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? drinks = null,
+    Object? detail = null,
   }) {
     return _then(_$Loaded(
-      null == drinks
-          ? _value._drinks
-          : drinks // ignore: cast_nullable_to_non_nullable
-              as List<Drink>,
+      null == detail
+          ? _value.detail
+          : detail // ignore: cast_nullable_to_non_nullable
+              as DrinkDetail,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DrinkDetailCopyWith<$Res> get detail {
+    return $DrinkDetailCopyWith<$Res>(_value.detail, (value) {
+      return _then(_value.copyWith(detail: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded(final List<Drink> drinks) : _drinks = drinks;
+  const _$Loaded(this.detail);
 
-  final List<Drink> _drinks;
   @override
-  List<Drink> get drinks {
-    if (_drinks is EqualUnmodifiableListView) return _drinks;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_drinks);
-  }
+  final DrinkDetail detail;
 
   @override
   String toString() {
-    return 'DrinkCategoryState.loaded(drinks: $drinks)';
+    return 'DrinkDetailState.loaded(detail: $detail)';
   }
 
   @override
@@ -444,12 +543,11 @@ class _$Loaded implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Loaded &&
-            const DeepCollectionEquality().equals(other._drinks, _drinks));
+            (identical(other.detail, detail) || other.detail == detail));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_drinks));
+  int get hashCode => Object.hash(runtimeType, detail);
 
   @JsonKey(ignore: true)
   @override
@@ -461,32 +559,32 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Drink> drinks) loaded,
+    required TResult Function(DrinkDetail detail) loaded,
     required TResult Function() error,
   }) {
-    return loaded(drinks);
+    return loaded(detail);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Drink> drinks)? loaded,
+    TResult? Function(DrinkDetail detail)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(drinks);
+    return loaded?.call(detail);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Drink> drinks)? loaded,
+    TResult Function(DrinkDetail detail)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(drinks);
+      return loaded(detail);
     }
     return orElse();
   }
@@ -494,7 +592,7 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(Loaded value) loaded,
     required TResult Function(Error value) error,
   }) {
@@ -504,7 +602,7 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
     TResult? Function(Error value)? error,
   }) {
@@ -514,7 +612,7 @@ class _$Loaded implements Loaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(Loaded value)? loaded,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -526,10 +624,10 @@ class _$Loaded implements Loaded {
   }
 }
 
-abstract class Loaded implements DrinkCategoryState {
-  const factory Loaded(final List<Drink> drinks) = _$Loaded;
+abstract class Loaded implements DrinkDetailState {
+  const factory Loaded(final DrinkDetail detail) = _$Loaded;
 
-  List<Drink> get drinks;
+  DrinkDetail get detail;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -543,7 +641,7 @@ abstract class _$$ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorCopyWithImpl<$Res>
-    extends _$DrinkCategoryStateCopyWithImpl<$Res, _$Error>
+    extends _$DrinkDetailStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -556,7 +654,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'DrinkCategoryState.error()';
+    return 'DrinkDetailState.error()';
   }
 
   @override
@@ -572,7 +670,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Drink> drinks) loaded,
+    required TResult Function(DrinkDetail detail) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -582,7 +680,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Drink> drinks)? loaded,
+    TResult? Function(DrinkDetail detail)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -592,7 +690,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Drink> drinks)? loaded,
+    TResult Function(DrinkDetail detail)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -605,7 +703,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(Loading value) loading,
+    required TResult Function(_Loading value) loading,
     required TResult Function(Loaded value) loaded,
     required TResult Function(Error value) error,
   }) {
@@ -615,7 +713,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Loading value)? loading,
+    TResult? Function(_Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
     TResult? Function(Error value)? error,
   }) {
@@ -625,7 +723,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(Loading value)? loading,
+    TResult Function(_Loading value)? loading,
     TResult Function(Loaded value)? loaded,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -637,6 +735,6 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements DrinkCategoryState {
+abstract class Error implements DrinkDetailState {
   const factory Error() = _$Error;
 }

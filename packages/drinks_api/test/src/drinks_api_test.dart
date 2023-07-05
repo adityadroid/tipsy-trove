@@ -1,4 +1,4 @@
-import 'package:drinks_api/src/drinks_api.dart';
+import 'package:drinks_api/src/api/drinks_api.dart';
 import 'package:test/test.dart';
 
 class TestDrinksApi extends DrinksApi {

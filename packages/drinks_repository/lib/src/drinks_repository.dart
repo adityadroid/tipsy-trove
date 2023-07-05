@@ -13,4 +13,7 @@ class DrinksRepository {
   /// get drinks by [DrinkType]
   Future<List<Drink>> getDrinksByType(DrinkType drinkType) =>
       _api.getDrinksByType(drinkType);
+
+  /// get random drink of type [DrinkDetail]
+  Future<DrinkDetail?> getRandomDrink() => _api.getRandomDrink();
 }

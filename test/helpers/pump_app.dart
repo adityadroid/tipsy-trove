@@ -21,15 +21,17 @@ extension PumpApp on WidgetTester {
     when(() => repo.getDrinksByType(any()))
         .thenAnswer((_) => Future.value(<Drink>[]));
 
-    return mockNetworkImages(() => pumpWidget(
-          MaterialApp(
-            localizationsDelegates: AppLocalizations.localizationsDelegates,
-            supportedLocales: AppLocalizations.supportedLocales,
-            home: InjectionContainer(
-              drinksRepository: repo,
-              child: widget,
-            ),
+    return mockNetworkImages(
+      () => pumpWidget(
+        MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: InjectionContainer(
+            drinksRepository: repo,
+            child: widget,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

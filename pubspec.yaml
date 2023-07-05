@@ -9,22 +9,23 @@ environment:
 dependencies:
   bloc: ^8.1.2
   dio: ^5.2.1+1
+  drinks_api:
+    path: packages/drinks_api
+  drinks_repository:
+    path: packages/drinks_repository
+  drinks_rest_api:
+    path: packages/drinks_rest_api
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
   flutter_dotenv: ^5.1.0
   flutter_localizations:
     sdk: flutter
+  freezed_annotation: ^2.2.0
+  go_router: ^9.0.0
   intl: ^0.18.0
   types:
     path: packages/types
-  drinks_rest_api:
-    path: packages/drinks_rest_api
-  drinks_api:
-    path: packages/drinks_api
-  drinks_repository:
-    path: packages/drinks_repository
-  freezed_annotation: ^2.2.0
   ui_kit:
     path: packages/ui_kit
 
@@ -33,13 +34,14 @@ dev_dependencies:
   bloc_test: ^9.1.2
   build_runner: ^2.4.6
   flutter_gen_runner: ^5.3.0
+  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
+  freezed: ^2.3.5
   mocktail: ^0.3.0
   mocktail_image_network: ^0.3.1
   very_good_analysis: ^5.0.0
-  flutter_launcher_icons: ^0.13.1
-  freezed: ^2.3.5
+
 
 flutter:
   generate: true

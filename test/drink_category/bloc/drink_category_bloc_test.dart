@@ -14,10 +14,10 @@ void main() {
       registerFallbackValue(DrinkType.ordinary);
       repo = MockDrinksRepository();
     });
-    test('initial state is .initial() ', () {
+    test('initial state is .loading() ', () {
       expect(
         DrinkCategoryBloc(drinksRepository: repo).state,
-        equals(const DrinkCategoryState.initial()),
+        equals(const DrinkCategoryState.loading()),
       );
     });
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(
@@ -28,7 +28,10 @@ void main() {
       },
       build: () => DrinkCategoryBloc(drinksRepository: repo),
       act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
-      expect: () => [const Loaded([])],
+      expect: () => [
+        const DrinkCategoryState.loading(),
+        const DrinkCategoryState.loaded([])
+      ],
     );
 
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(
@@ -48,14 +51,18 @@ void main() {
           bloc.state is Loaded && (bloc.state as Loaded).drinks.length == 3,
     );
     blocTest<DrinkCategoryBloc, DrinkCategoryState>(
-        'emits .error() when Exception is encountered',
-        setUp: () {
-          when(() => repo.getDrinksByType(DrinkType.ordinary))
-              .thenThrow(Exception('Something went wrong!'));
-        },
-        build: () => DrinkCategoryBloc(drinksRepository: repo),
-        act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
-        expect: () => [const Loaded([])],
-        errors: () => [isA<Exception>()]);
+      'emits .error() when Exception is encountered',
+      setUp: () {
+        when(() => repo.getDrinksByType(DrinkType.ordinary))
+            .thenThrow(Exception('Something went wrong!'));
+      },
+      build: () => DrinkCategoryBloc(drinksRepository: repo),
+      act: (bloc) => bloc.add(const InitEvent(drinkType: DrinkType.ordinary)),
+      expect: () => [
+        const DrinkCategoryState.loading(),
+        const DrinkCategoryState.error()
+      ],
+      errors: () => [isA<Exception>()],
+    );
   });
 }
