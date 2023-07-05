@@ -39,21 +39,21 @@ class DrinksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<DrinkCategoryBloc, DrinkCategoryState>(
-        bloc: context.read<DrinkCategoryBloc>(),
-        builder: (context, state) {
-          return state.when(
-            loading: () => const SliverFillRemaining(
-              child: LoadingIndicator(),
+      bloc: context.read<DrinkCategoryBloc>(),
+      builder: (context, state) {
+        return state.when(
+          loading: () => const SliverFillRemaining(
+            child: LoadingIndicator(),
+          ),
+          loaded: (List<Drink> drinks) => SliverGrid(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 0.9,
             ),
-            loaded: (List<Drink> drinks) => SliverGrid(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.9,
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return DrinkItem(
-                    image: drinks[index].strDrinkThumb ?? '',
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return DrinkItem(
+                  image: drinks[index].strDrinkThumb ?? '',
                   title: drinks[index].strDrink ?? '',
                 );
               },
